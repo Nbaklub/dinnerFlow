@@ -39,6 +39,9 @@ const Login = ({navigation}) => {
             // Rejestracja użytkownika za pomocą adresu e-mail i hasła
             await createUserWithEmailAndPassword(auth, email, password);
             const user = auth.currentUser;
+            console.log(user.uid)
+            console.log(name)
+            console.log(location)
             user.displayName = name;
             user.phoneNumber = phone;
             await addDoc(collection(firestroe, 'users'), {
